@@ -1,1 +1,26 @@
 # dariaag.github.io
+Hey! Welcome to my page of things I have done as a devrel!
+
+You can find me on Twitter, [@dariaagad](www.twitter.com/dariaagad) and Instagram [@caradariaa](www.instagram.com/caradariaa), if you want to bake a cake :)
+
+### Videos
+
+- [NeonEVM YouTube](https://www.youtube.com/@NeonEVM)
+  - [Deploy your first contract on Neon with Foundry](https://www.youtube.com/watch?v=_vKXUZxSdSY)
+  - [Points Program](https://www.youtube.com/watch?v=eIidJkupAK8)
+- [SQD YouTube](https://www.youtube.com/@subsquid)
+  - [Migrating from the Graph to SQD](https://www.youtube.com/watch?v=_lMM6h1fBUY) 
+  - [Index Uniswap Swap Events with SQD](https://www.youtube.com/watch?v=SipZTzL96t8)
+  - [How to index Solana with the Squid SDK](https://www.youtube.com/watch?v=2_LDh1idC7k) 
+
+
+### Tutorials
+
+- [Creating Parquet Datasets with Squid SDK](https://medium.com/subsquid/creating-parquet-datasets-with-squid-sdk-54a0262f3471)
+- [Build an Airdrop Dapp with React, Wagmi and Subsquid](https://medium.com/subsquid/build-an-airdrop-dapp-with-react-wagmi-and-subsquid-ca0256dd74f5)
+
+
+### Conferences
+
+- [Devcon Epic ETH Infra Day - Indexing Using a Decentralized Data Layer](https://www.youtube.com/watch?v=RblD9z4PU8U)
+- [How to Successfully Engage Web3 Developers: Avalanche House Istanbul](https://www.youtube.com/watch?v=pieN-iK33yg)
