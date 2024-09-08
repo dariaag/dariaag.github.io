@@ -11,7 +11,9 @@ You can find me on Twitter, [@dariaagad](https://www.twitter.com/dariaagad) and 
 - [SQD YouTube](https://www.youtube.com/@subsquid)
   - [Migrating from the Graph to SQD](https://www.youtube.com/watch?v=_lMM6h1fBUY) 
   - [Index Uniswap Swap Events with SQD](https://www.youtube.com/watch?v=SipZTzL96t8)
-  - [How to index Solana with the Squid SDK](https://www.youtube.com/watch?v=2_LDh1idC7k) 
+  - [How to index Solana with the Squid SDK](https://www.youtube.com/watch?v=2_LDh1idC7k)
+- [LearnWeb3 YouTube](https://www.youtube.com/@LearnWeb3IO)
+  - [Indexing ERC721 Transfers with SQD Live Workshop](https://www.youtube.com/watch?v=IYEO84Xa9fE) 
 
 
 ### Written Tutorials
