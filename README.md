@@ -1,4 +1,3 @@
-# Daria's DevRel Portfolio
 Hey! Welcome to my page of things I have done as a devrel!
 
 You can find me on Twitter, [@dariaagad](https://www.twitter.com/dariaagad), [GitHub](https://www.https://github.com/dariaag/)
