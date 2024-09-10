@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevRel Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6600;
+            --text-color: #333;
+            --bg-color: #ffffff;
+        }
+        body {
+            font-family: 'Roboto Mono', monospace;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            font-weight: 400;
+            font-size: 16px;
+        }
+        h1, h2 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--primary-color);
+            font-weight: 300;
+            margin-top: 1em;
+        }
+        h1 {
+            font-size: 2.5em;
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 0.5em;
+        }
+        h2 {
+            font-size: 1.8em;
+        }
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: var(--primary-color);
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 0.5em;
+            position: relative;
+        }
+        li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: -15px;
+        }
+        ul ul {
+            margin-top: 0.5em;
+        }
+        .section {
+            padding: 15px 0;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: translateX(10px);
+        }
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-right: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+        #theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle">Toggle Theme</button>
+    <h1>DevRel Portfolio</h1>
+
+    <p>Hey! Welcome to my page of things I have done as a devrel!</p>
+    
+    <p>You can find me on Twitter, <a href="https://www.twitter.com/dariaagad">@dariaagad</a>, <a href="https://github.com/dariaag/">GitHub</a> and Instagram <a href="https://www.instagram.com/caradariaa">@caradariaa</a>, if you want to bake a cake :)</p>
+
+    <div class="section">
+        <h2>Videos</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/@NeonEVM">NeonEVM YouTube</a> 
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=_vKXUZxSdSY">Deploy your first contract on Neon with Foundry</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=eIidJkupAK8">Points Program</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.youtube.com/@subsquid">SQD YouTube</a>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=_lMM6h1fBUY">Migrating from the Graph to SQD</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=SipZTzL96t8">Index Uniswap Swap Events with SQD</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=2_LDh1idC7k">How to index Solana with the Squid SDK</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.youtube.com/@LearnWeb3IO">LearnWeb3 YouTube</a> 
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=IYEO84Xa9fE">Indexing ERC721 Transfers with SQD Live Workshop</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Written Tutorials</h2>
+        <ul>
+            <li><a href="https://medium.com/subsquid/creating-parquet-datasets-with-squid-sdk-54a0262f3471">Creating Parquet Datasets with Squid SDK</a> 
+            <li><a href="https://medium.com/subsquid/build-an-airdrop-dapp-with-react-wagmi-and-subsquid-ca0256dd74f5">Build an Airdrop Dapp with React, Wagmi and Subsquid</a> 
+            <li><a href="https://neonevm.org/blog/effortless-cross-chain-communication-with-neonevm-hyperlane-and-solana_s-speed_part-1">Effortless Crosschain Communication with Hyperlane</a> 
+    </div>
+
+    <div class="section">
+        <h2>Conferences</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=RblD9z4PU8U">Devcon Epic ETH Infra Day - Indexing Using a Decentralized Data Layer</a> 
+            <li><a href="https://www.youtube.com/watch?v=pieN-iK33yg">How to Successfully Engage Web3 Developers: Avalanche House Istanbul</a> 
+        </ul>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            if (root.style.getPropertyValue('--bg-color') === '#ffffff') {
+                root.style.setProperty('--bg-color', '#1a1a1a');
+                root.style.setProperty('--text-color', '#ffffff');
+            } else {
+                root.style.setProperty('--bg-color', '#ffffff');
+                root.style.setProperty('--text-color', '#333333');
+            }
+        });
+    </script>
+</body>
+</html>
