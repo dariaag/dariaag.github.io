@@ -1,184 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daria's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Roboto+Mono&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #ff6600;
-            --text-color: #333;
-            --bg-color: #ffffff;
-        }
-        body {
-            font-family: 'Roboto Mono', monospace;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            font-weight: 400;
-            font-size: 16px;
-        }
-        h1, h2 {
-            font-family: 'Roboto', sans-serif;
-            color: var(--primary-color);
-            font-weight: 300;
-            margin-top: 5px;
-        }
-        h1 {
-            font-size: 1.8em;
-            padding-bottom: 0.5em;
-        }
-        h2 {
-            font-size: 1em;
-        }
-        a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: var(--primary-color);
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 0.5em;
-            position: relative;
-        }
-        li::before {
-            content: "•";
-            color: var(--primary-color);
-            position: absolute;
-            left: -15px;
-        }
-        ul ul {
-            margin-top: 0.5em;
-        }
-        .section {
-            padding: 5px 0;
-            margin-bottom: 10px;
-            transition: transform 0.3s ease;
-        }
-        #mover {
-            transform: translateX(10px);
-        }
-        .tag {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            margin-right: 5px;
-            font-family: 'Roboto', sans-serif;
-        }
-        #theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-family: 'Roboto', sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daria’s Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --pink:   #ffb6c1;
+      --grey-l: #f7f7f7;
+      --grey-d: #333;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: var(--grey-l);
+      color: var(--grey-d);
+      font-family: 'Rubik', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      min-height: 100vh;
+      text-align: center;
+    }
+    main {
+      max-width: 600px;
+      width: 100%;
+    }
+    h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.8rem;
+      color: var(--pink);
+      margin-bottom: 1rem;
+    }
+    p.lead {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+    .social-links {
+      margin-bottom: 2rem;
+    }
+    .social-links a {
+      color: var(--grey-d);
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .social-links a:hover {
+      color: var(--pink);
+    }
+    .hero-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--pink);
+      margin-bottom: 2rem;
+    }
+
+    /* Accordion container */
+    .links {
+      list-style: none;
+      text-align: left;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Accordion styling */
+    .links details {
+      margin-bottom: 1rem;
+    }
+    .links summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.8rem 1rem;
+      background: #fff;
+      border-left: 4px solid var(--pink);
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.2s;
+      position: relative;
+      text-align: left;
+    }
+    .links summary::-webkit-details-marker {
+      display: none;
+    }
+    .links summary::after {
+      content: '▸';
+      position: absolute;
+      right: 1rem;
+      transition: transform 0.2s;
+    }
+    .links details[open] summary {
+      background: var(--pink);
+      color: #fff;
+    }
+    .links details[open] summary::after {
+      transform: rotate(90deg);
+    }
+    .links summary:hover {
+      transform: translateX(4px);
+    }
+
+    /* Sub‑links */
+    .sub-links {
+      list-style: none;
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    .sub-links li {
+      margin: 0.5rem 0;
+      position: relative;
+      padding-left: 1rem; /* space for dot */
+    }
+    .sub-links li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background: var(--pink);
+      border-radius: 50%;
+    }
+    .sub-links a {
+      color: var(--grey-d);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .sub-links a:hover {
+      color: var(--pink);
+    }
+  </style>
 </head>
 <body>
-    <button id="theme-toggle">Toggle Theme</button>
-    <h1>Daria's Highlights</h1>
-    
-    <p>Hey! Welcome to my page of things I have done as a devrel, and more!</p>
-    
-    <p>You can find me on Twitter, <a href="https://www.twitter.com/dariaagad">@dariaagad</a>, <a href="https://github.com/dariaag/">GitHub</a> and Instagram <a href="https://www.instagram.com/caradariaa">@caradariaa</a>, if you want to bake a cake :)</p>
-
-    <div class="section">
-        <h2><b>Videos</b></h2>
-        <ul>
-            <li><a href="https://www.youtube.com/@NeonEVM">NeonEVM YouTube</a> 
-                <ul>
-                    <li id="mover"><a href="https://www.youtube.com/watch?v=_vKXUZxSdSY">Deploy your first contract on Neon with Foundry</a></li>
-                    <li id="mover"><a href="https://www.youtube.com/watch?v=b9MxjbZ_DAU">Deploy your first contract on Neon with Hardhat</a></li>
-                    <li id="mover"><a href="https://www.youtube.com/watch?v=eIidJkupAK8">Points Program</a></li>
-                </ul>
-            </li>
-            <li><a href="https://www.youtube.com/@subsquid">SQD YouTube</a>
-                <ul>
-                    <li id="mover"><a href="https://www.youtube.com/watch?v=_lMM6h1fBUY">Migrating from the Graph to SQD</a></li>
-                    <li id="mover"><a href="https://www.youtube.com/watch?v=SipZTzL96t8">Index Uniswap Swap Events with SQD</a></li>
-                    <li id="mover"><a href="https://www.youtube.com/watch?v=2_LDh1idC7k">How to index Solana with the Squid SDK</a></li>
-                    <li id="mover"><a href="https://www.youtube.com/watch?v=YLcDXrpFR8k">Deploy your Subgraph to the Subsquid Network!</a></li>
-                    <li id="mover"><a href="https://www.youtube.com/watch?v=m5Q6HBMJ8EY">Web3 Data Unlocked: Indexing Web3 Data with Subsquid & Google BigQuery</a></li>
-                    <li id="mover"><a href="https://www.youtube.com/watch?v=YQt_JTf8RIc">Indexing Multichain Projects with Subsquid</a></li>
-                    <li id="mover"><a href="https://www.youtube.com/watch?v=q1QMGFIpuh0&t=1s">Index $DEGEN on Base with Subsquid</a></li>
-              </ul>
-            </li>
-            <li><a href="https://www.youtube.com/@LearnWeb3IO">LearnWeb3 YouTube</a> 
-                <ul>
-                    <li id="mover"><a href="https://www.youtube.com/watch?v=IYEO84Xa9fE">Indexing ERC721 Transfers with SQD Live Workshop</a></li>
-                </ul>
-            </li>
-        </ul>
+  <main>
+    <h1>Hi! I’m Daria.</h1>
+    <p class="lead">
+      devrel, software engineer and docs nerd
+    </p>
+    <div class="social-links">
+      <a href="https://x.com/dariaagad">Twitter/X</a>•
+      <a href="https://github.com/dariaag">GitHub</a>•
+      <a href="https://instagram.com/caradariaa">Instagram</a>
     </div>
+    <!-- Updated profile picture -->
+    <img src="https://pbs.twimg.com/profile_images/1901129207100366848/2VOcwNMq_400x400.jpg" alt="Daria’s portrait" class="hero-img"/>
 
-    <div class="section">
-        <h2><b>Written Tutorials</b></h2>
-        <ul>
-            <li id="mover"><a href="https://medium.com/subsquid/creating-parquet-datasets-with-squid-sdk-54a0262f3471">Creating Parquet Datasets with Squid SDK</a></li>
-            <li id="mover"><a href="https://medium.com/subsquid/build-an-airdrop-dapp-with-react-wagmi-and-subsquid-ca0256dd74f5">Build an Airdrop Dapp with React, Wagmi and Subsquid</a></li>
-            <li id="mover"><a href="https://neonevm.org/blog/effortless-cross-chain-communication-with-neonevm-hyperlane-and-solana_s-speed_part-1">Effortless Crosschain Communication with Hyperlane</a></li>
-            <li id="mover"><a href="https://neonevm.org/blog/effortless-cross-chain-communication-with-neonevm-hyperlane-and-solana_s-speed_part-2">Effortless Crosschain Token Transfers with Hyperlane</a></li>
-            <li id="mover"><a href="https://neonevm.org/blog/deep-dive-into-neon-and-solana-composability">Deep Dive into Neon->Solana Composability</a></li>
+    <ul class="links">
+      <li>
+        <details>
+          <summary>🎥 Videos</summary>
+          <ul class="sub-links">
+            <li><a href="https://www.youtube.com/watch?v=_vKXUZxSdSY">Deploy your first contract on Neon with Foundry</a></li>
+            <li><a href="https://www.youtube.com/watch?v=_lMM6h1fBUY">Migrating from the Graph to SQD</a></li>
+            <li><a href="https://www.youtube.com/watch?v=SipZTzL96t8">Index Uniswap Swap Events with SQD</a></li>
+            <li><a href="https://www.youtube.com/watch?v=m5Q6HBMJ8EY">Web3 Data Unlocked: Indexing Web3 Data with Subsquid & Google BigQuery</a></li>
+            <li><a href="https://www.youtube.com/watch?v=YQt_JTf8RIc">Indexing Multichain Projects with Subsquid</a></li>
+            <li><a href="https://www.youtube.com/watch?v=IYEO84Xa9fE">Indexing ERC721 Transfers with SQD Live Workshop</a></li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>✍️ Written Tutorials</summary>
+          <ul class="sub-links">
+            <li ><a href="https://medium.com/subsquid/creating-parquet-datasets-with-squid-sdk-54a0262f3471">Creating Parquet Datasets with Squid SDK</a></li>
+            <li ><a href="https://medium.com/subsquid/build-an-airdrop-dapp-with-react-wagmi-and-subsquid-ca0256dd74f5">Build an Airdrop Dapp with React, Wagmi and Subsquid</a></li>
+            <li ><a href="https://neonevm.org/blog/effortless-cross-chain-communication-with-neonevm-hyperlane-and-solana_s-speed_part-1">Effortless Crosschain Communication with Hyperlane</a></li>
+            <li ><a href="https://neonevm.org/blog/effortless-cross-chain-communication-with-neonevm-hyperlane-and-solana_s-speed_part-2">Effortless Crosschain Token Transfers with Hyperlane</a></li>
+            <li ><a href="https://neonevm.org/blog/deep-dive-into-neon-and-solana-composability">Deep Dive into Neon->Solana Composability</a></li>
 
-            
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>📚 Documentation</summary>
+          <ul class="sub-links">
+            <li><a href="https://docs.sqd.ai/solana-indexing/">Solana Indexing</a></li>
+            <li><a href="https://docs.sqd.ai/subsquid-network/">SQD Network</a></li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>🎤 Conferences</summary>
+          <ul class="sub-links">
+            <li ><a href="https://www.youtube.com/watch?v=RblD9z4PU8U">Devcon Epic ETH Infra Day - Indexing Using a Decentralized Data Layer</a></li>
+            <li ><a href="https://www.youtube.com/watch?v=pieN-iK33yg">How to Successfully Engage Web3 Developers: Avalanche House Istanbul</a></li>
+            <li ><a href="https://www.youtube.com/watch?v=Oo_z-8c_r1Y">How to Access Solana using Neon EVM - ETHGlobal Bangkok 2024</a></li>
         </ul>
-    </div>
-
-    <div class="section">
-        <h2><b>Documentation</b></h2>
-        <ul>
-            <li id="mover"><a href="https://docs.sqd.ai/solana-indexing/">Solana Indexing</a></li>
-            <li id="mover"><a href="https://docs.sqd.ai/subsquid-network/">SQD Network</a></li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2><b>Conferences</b></h2>
-        <ul>
-            <li id="mover"><a href="https://www.youtube.com/watch?v=RblD9z4PU8U">Devcon Epic ETH Infra Day - Indexing Using a Decentralized Data Layer</a></li>
-            <li id="mover"><a href="https://www.youtube.com/watch?v=pieN-iK33yg">How to Successfully Engage Web3 Developers: Avalanche House Istanbul</a></li>
-            <li id="mover"><a href="https://www.youtube.com/watch?v=Oo_z-8c_r1Y">How to Access Solana using Neon EVM - ETHGlobal Bangkok 2024</a></li>
-        </ul>
-    </div>
-    
-    <div class="section">
-        <h2><b>Experiments</b></h2>
-        <ul>
-            <li id="mover"><a href="http://apps.apple.com/us/app/froggy-sort/id6670475809">Froggy Sort, a puzzle game I made with the help of AI</a></li>
-        </ul>
-    </div>
-
-    <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const root = document.documentElement;
         
-        themeToggle.addEventListener('click', () => {
-            if (root.style.getPropertyValue('--bg-color') === '#ffffff') {
-                root.style.setProperty('--bg-color', '#1a1a1a');
-                root.style.setProperty('--text-color', '#ffffff');
-            } else {
-                root.style.setProperty('--bg-color', '#ffffff');
-                root.style.setProperty('--text-color', '#333333');
-            }
-        });
-    </script>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>🔬 Experiments</summary>
+          <ul class="sub-links">
+            <li><a href="http://apps.apple.com/us/app/froggy-sort/id6670475809">Froggy Sort, a puzzle game I made with AI</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </main>
 </body>
 </html>
